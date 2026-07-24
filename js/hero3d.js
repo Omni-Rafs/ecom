@@ -78,27 +78,41 @@ async function initThree(){
   );
   scene.add(knot2);
 
-  let mx=0, my=0;
+  let mx=0, my=0, scrollK=0;
   addEventListener('mousemove', e => { mx = (e.clientX/innerWidth-.5)*2; my = (e.clientY/innerHeight-.5)*2; });
+  addEventListener('scroll', () => { scrollK = Math.min(scrollY/innerHeight, 1); }, {passive:true});
   function resize(){
     const w = canvas.clientWidth, h = canvas.clientHeight;
     renderer.setSize(w, h, false);
     camera.aspect = w/h; camera.updateProjectionMatrix();
   }
   resize(); addEventListener('resize', resize);
+
+  // Only render while the hero is on screen and the tab is visible —
+  // no wasted GPU work while the user reads the rest of the page.
+  let heroVisible = true, running = false;
   const clock = new THREE.Clock();
   function frame(){
+    if(!heroVisible || document.hidden){ running = false; return; }
     const t = clock.getElapsedTime();
     knot.rotation.x = t*.18; knot.rotation.y = t*.24;
+    const breathe = 1 + Math.sin(t*.8)*.035; // gentle organic pulse
+    knot.scale.setScalar(breathe);
     knot2.rotation.y = -t*.06; knot2.rotation.z = t*.04;
     stars.rotation.y = t*.02 + mx*.12;
     stars.rotation.x = my*.08;
+    // mouse parallax + slight scroll dolly for depth as the hero exits
     camera.position.x += (mx*.7 - camera.position.x)*.04;
-    camera.position.y += (-my*.5 - camera.position.y)*.04;
+    camera.position.y += ((-my*.5 - scrollK*1.6) - camera.position.y)*.06;
+    camera.position.z = 8 + scrollK*1.2;
     camera.lookAt(0,0,0);
     renderer.render(scene, camera);
-    if(!reduceMotion) requestAnimationFrame(frame);
+    requestAnimationFrame(frame);
   }
-  frame();
+  function play(){ if(!running){ running = true; requestAnimationFrame(frame); } }
+  new IntersectionObserver(es => { heroVisible = es[0].isIntersecting; if(heroVisible) play(); }, {threshold:0})
+    .observe(canvas);
+  document.addEventListener('visibilitychange', () => { if(!document.hidden) play(); });
+  play();
 }
 if(reduceMotion){ fallback2D(); } else { initThree(); }
