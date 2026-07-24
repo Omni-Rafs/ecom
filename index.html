@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURA — Gear From The Future</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="preloader"><div class="pre-logo">AURA</div><div class="pre-bar"><i></i></div></div>
+<div class="cursor-dot" id="cDot"></div>
+<div class="cursor-ring" id="cRing"></div>
+
+<header id="header">
+  <nav class="nav">
+    <a href="#" class="logo"><span class="dot"></span>AURA</a>
+    <div class="nav-links">
+      <a href="#shop">Shop</a><a href="#features">Why AURA</a><a href="#showcase">Flagship</a><a href="#reviews">Reviews</a>
+    </div>
+    <button class="cart-btn" id="cartOpen" aria-label="Open cart">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <canvas id="scene"></canvas>
+  <div class="hero-inner">
+    <div class="eyebrow fade-up"><i></i>New drop &mdash; The 2026 Flux Collection</div>
+    <h1>
+      <span class="hero-title-line"><span>Gear from</span></span>
+      <span class="hero-title-line"><span>the <span class="grad">future.</span></span></span>
+    </h1>
+    <p class="hero-sub fade-up d1">Audio, wearables and smart devices engineered with obsessive detail &mdash; and delivered to your door in 24 hours.</p>
+    <div class="hero-cta fade-up d2">
+      <a href="#shop" class="btn btn-primary magnetic">Shop the collection
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#showcase" class="btn btn-ghost magnetic">Meet the flagship</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>Free 24h shipping <b>&#10022;</b></span><span>2-year warranty <b>&#10022;</b></span><span>30-day returns <b>&#10022;</b></span><span>Carbon-neutral delivery <b>&#10022;</b></span><span>4.9&#9733; from 12k reviews <b>&#10022;</b></span>
+  </div>
+</div>
+
+<!-- SHOP -->
+<section id="shop">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">The collection</span>
+      <h2>Best sellers, engineered to disappear into your life.</h2>
+      <p>Every product is tuned, tested and torture-proofed in our lab before it earns the AURA mark.</p>
+    </div>
+    <div class="grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Why AURA</span>
+      <h2>Obsessed with the details you'll never see.</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>24-hour delivery</h3><p>Order before midnight and it's at your door tomorrow. Every order, every city we serve.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>2-year warranty</h3><p>If it breaks, we replace it. No forms, no receipts, no interrogation. That simple.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/></svg></div>
+        <h3>30-day returns</h3><p>Live with it for a month. If it isn't love, send it back on us &mdash; zero questions asked.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <h3>Carbon-neutral</h3><p>Every shipment is offset twice over, and our packaging is 100% recycled fiber.</p>
+      </div>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><b data-count="120" data-suffix="k+">0</b><span>Happy customers</span></div>
+      <div class="stat"><b data-count="4.9" data-decimal="1" data-suffix="/5">0</b><span>Average rating</span></div>
+      <div class="stat"><b data-count="38" data-suffix="">0</b><span>Countries served</span></div>
+      <div class="stat"><b data-count="24" data-suffix="h">0</b><span>Delivery time</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="showcase" id="showcase">
+  <div class="wrap">
+    <div class="show-img reveal"><img id="parallaxImg" src="" alt="Flux Pro wireless headphones"></div>
+    <div class="reveal">
+      <span class="kicker">The flagship</span>
+      <h2>Flux Pro. Silence, engineered.</h2>
+      <p style="margin-top:16px;color:var(--muted);font-size:16.5px">Adaptive ANC that samples your environment 48,000 times a second, wrapped in aerospace-grade composite that weighs less than an apple.</p>
+      <ul class="show-list">
+        <li><span class="check">&#10003;</span><span><b>60-hour battery</b> &mdash; a full work week on one charge, 5 hours from a 5-minute top-up.</span></li>
+        <li><span class="check">&#10003;</span><span><b>Spatial audio</b> &mdash; head-tracked 360&deg; sound tuned by Grammy-winning engineers.</span></li>
+        <li><span class="check">&#10003;</span><span><b>Adaptive ANC</b> &mdash; from caf&eacute; chatter to jet engines, gone at the flick of a switch.</span></li>
+      </ul>
+      <div style="margin-top:36px"><button class="btn btn-primary magnetic" data-add="1">Add Flux Pro &mdash; $329</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Reviews</span>
+      <h2>Loved a little too loudly.</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"The Flux Pro made my open-plan office disappear. I put them on at 9am and surfaced at lunch. Terrifying. Ten out of ten."</p>
+        <div class="who"><div class="avatar" style="background:linear-gradient(135deg,#5E9FE8,#8F7BEF)">MK</div><div><b>Maya K.</b><span>Verified buyer</span></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Ordered at 11pm, wearing the Pulse watch by 3pm the next day. The packaging alone felt like an event. Everything else should be this easy."</p>
+        <div class="who"><div class="avatar" style="background:linear-gradient(135deg,#72BC8F,#4FB9C9)">JT</div><div><b>Jordan T.</b><span>Verified buyer</span></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <p>"The Orbit speaker fills my whole flat from a single corner. Docked one star because my neighbours now request songs through the wall."</p>
+        <div class="who"><div class="avatar" style="background:linear-gradient(135deg,#DE9255,#DF84A8)">AR</div><div><b>Amara R.</b><span>Verified buyer</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section>
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <span class="kicker">Stay in orbit</span>
+      <h2>Get early access to drops.</h2>
+      <p>One email a month. New products, private discounts, zero spam.</p>
+      <form class="nl-form" id="nlForm">
+        <input type="email" placeholder="you@example.com" required aria-label="Email address">
+        <button type="submit" class="btn btn-primary magnetic">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="logo"><span class="dot"></span>AURA</a>
+  <p>&copy; 2026 AURA Labs. A concept storefront &mdash; crafted with Three.js and far too much coffee.</p>
+</footer>
+
+<!-- CART -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="drawer-head"><h3>Your cart</h3><button class="close-x" id="cartClose" aria-label="Close cart">&times;</button></div>
+  <div class="drawer-items" id="drawerItems"></div>
+  <div class="drawer-foot">
+    <div class="total-row"><span style="color:var(--muted)">Subtotal</span><b id="cartTotal">$0</b></div>
+    <button class="btn btn-primary checkout" id="checkoutBtn">Checkout &mdash; free 24h shipping</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"><i>&#10003;</i><span id="toastMsg">Added to cart</span></div>
+
+<script src="js/assets.js"></script>
+<script src="js/main.js"></script>
+
+<script type="module" src="js/hero3d.js"></script>
+</body>
+</html>
