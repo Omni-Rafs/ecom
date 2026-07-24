@@ -23,13 +23,17 @@ A dark, futuristic ecommerce concept storefront built with **vanilla HTML/CSS/JS
 
 ```
 .
-├── index.html          # markup only
+├── index.html               # markup only
 ├── css/
-│   └── style.css       # all styles + responsive & reduced-motion rules
+│   └── style.css            # all styles + responsive & reduced-motion rules
 └── js/
-    ├── assets.js       # product imagery as WebP data URIs
-    ├── main.js         # products, cart, tilt, cursor, reveals, counters
-    └── hero3d.js       # Three.js hero scene + 2D canvas fallback
+    ├── assets.js            # image registry (AURA_IMG)
+    ├── assets-headphones.js # product imagery as WebP data URIs
+    ├── assets-watch.js
+    ├── assets-speaker.js
+    ├── assets-earbuds.js
+    ├── main.js              # products, cart, tilt, cursor, reveals, counters
+    └── hero3d.js            # Three.js hero scene + 2D canvas fallback
 ```
 
 ## Running locally
