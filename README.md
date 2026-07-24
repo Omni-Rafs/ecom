@@ -5,13 +5,14 @@ A dark, futuristic ecommerce concept storefront built with **vanilla HTML/CSS/JS
 ## Features
 
 ### 3D & animation
-- **Three.js hero scene** — 2,600 glowing particles orbiting a rotating wireframe torus knot + icosahedron, with mouse-parallax camera drift (loaded from CDN at runtime, `unpkg` with `jsdelivr` fallback)
+- **Three.js hero scene** — 2,600 glowing particles orbiting a rotating, gently "breathing" wireframe torus knot + icosahedron, with mouse-parallax camera drift and a scroll-linked camera dolly (loaded from CDN at runtime, `unpkg` with `jsdelivr` fallback). Rendering pauses automatically when the hero is off-screen or the tab is hidden
 - **2D canvas fallback** — if Three.js can't load (offline / CDN blocked), the hero automatically switches to an animated particle-constellation canvas
-- Animated preloader, staggered hero title reveal, gradient text
+- Animated preloader that gates the hero intro (title blur-rise + staggered fade-ups start after the preloader lifts)
+- Scroll-linked hero parallax (content drifts and fades as you scroll away) + gradient scroll-progress bar
 - Custom cursor with trailing, morphing ring
-- Magnetic buttons, 3D tilt-on-hover product cards
-- "Fly to cart" animation when adding products
-- Scroll-triggered section reveals, animated stat counters, parallax flagship image, infinite marquee
+- Magnetic buttons, rAF-smoothed 3D tilt-on-hover product cards with a cursor-tracked specular sheen
+- "Fly to cart" arc animation + "✓ Added" button micro-interaction when adding products
+- Staggered scroll-triggered section reveals, animated stat counters, parallax flagship image, seamless infinite marquee
 - Respects `prefers-reduced-motion`
 
 ### Store
