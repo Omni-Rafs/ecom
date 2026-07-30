@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+    h1 { color: #4a4ae0; }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background: #4a4ae0;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover { background: #3737b0; }
+  </style>
+</head>
+<body>
+  <h1>Hello, World! 👋</h1>
+  <p>Welcome to my simple HTML page.</p>
+  <button onclick="greet()">Click me</button>
+
+  <script>
+    function greet() {
+      alert('Thanks for clicking! 🎉');
+    }
+  </script>
+</body>
+</html>
